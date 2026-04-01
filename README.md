@@ -35,12 +35,12 @@ pip install -r requirements.txt
 
 ```bash
 cp .env.example .env
-# Edit .env and add your Anthropic API key
+# Edit .env and add your Gemini API key
 ```
 
 Or export directly:
 ```bash
-export ANTHROPIC_API_KEY=sk-ant-your-key-here
+export GEMINI_API_KEY=sk-ant-your-key-here
 ```
 
 ### 3. Run
@@ -76,5 +76,4 @@ Click the ⚙ API Key button in the header and paste your key. It's stored in th
 
 - Add more roles in `ROLE_SKILLS` dict in `app.py`
 - Adjust `max_tokens` in each Claude call for longer/shorter responses
-- Swap `claude-sonnet-4-5` to `claude-opus-4-5` for higher quality answers
 - Add a database (SQLite/PostgreSQL) to persist user sessions and results
