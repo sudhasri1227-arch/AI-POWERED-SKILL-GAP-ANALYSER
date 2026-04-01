@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{% block title %}Career Readiness System{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <span class="logo-icon">🎯</span>
+        <span class="logo-text">CareerReady</span>
+      </a>
+      <div class="header-right" id="api-key-area">
+        <span id="key-status" class="key-status"></span>
+        <button class="btn btn-sm btn-ghost" onclick="openKeyModal()">⚙ API Key</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <div class="modal-backdrop" id="key-modal" style="display:none">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Gemini API Key</h3>
+        <button class="btn-icon" onclick="closeKeyModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-note">
+          Your key is stored in the session only.
+          Get yours at
+          <a href="https://aistudio.google.com/app/apikey" target="_blank">Google AI Studio</a>
+        </p>
+        <div class="field">
+          <label>API Key</label>
+          <input type="password" id="api-key-input" placeholder="AIza..." />
+        </div>
+        <div id="key-error" class="form-error" style="display:none"></div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" onclick="closeKeyModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="saveKey()">Save Key</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

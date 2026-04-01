@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}Career Readiness — Results{% endblock %}
+
+{% block content %}
+<div class="page-wrap">
+
+  <nav class="step-nav">
+    <div class="step done" data-step="1"><div class="step-dot">✓</div><span>Input</span></div>
+    <div class="step-line done"></div>
+    <div class="step done" data-step="2"><div class="step-dot">✓</div><span>Assessment</span></div>
+    <div class="step-line done"></div>
+    <div class="step active" data-step="3"><div class="step-dot">3</div><span>Results</span></div>
+  </nav>
+
+  <div class="card page-card" id="results-loading">
+    <div class="loading-center">
+      <div class="spinner"></div>
+      <p class="loading-title">Calculating your readiness…</p>
+      <p class="loading-sub">Generating your personalized learning path</p>
+    </div>
+  </div>
+
+  <div id="results-content" style="display:none">
+
+    <div class="card score-card">
+      <div class="score-hero">
+        <div class="score-ring-wrap">
+          <svg class="score-svg" viewBox="0 0 140 140">
+            <circle cx="70" cy="70" r="60" fill="none" stroke="#f0efe8" stroke-width="10"/>
+            <circle cx="70" cy="70" r="60" fill="none" id="score-arc"
+              stroke="#534AB7" stroke-width="10"
+              stroke-dasharray="376.9" stroke-dashoffset="376.9"
+              stroke-linecap="round"
+              transform="rotate(-90 70 70)"
+              style="transition: stroke-dashoffset 1.4s cubic-bezier(0.4,0,0.2,1)"/>
+          </svg>
+          <div class="score-center">
+            <span class="score-num" id="score-num">0%</span>
+            <span class="score-lbl">readiness</span>
+          </div>
+        </div>
+        <div class="score-details">
+          <h1>Your Career Readiness Report</h1>
+          <p class="score-verdict" id="score-verdict"></p>
+          <p class="score-role" id="score-role"></p>
+          <div class="score-stats" id="score-stats"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-bottom:1rem">
+      <div class="card">
+        <div class="section-label">✅ Strong Skills</div>
+        <div id="strong-skills" class="skills-grid"></div>
+      </div>
+      <div class="card">
+        <div class="section-label">⚠️ Needs Improvement</div>
+        <div id="weak-skills" class="skills-grid"></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:1rem">
+      <div class="section-label">❌ Missing Skills (Required for Role)</div>
+      <div id="missing-skills"></div>
+    </div>
+
+    <div class="card" id="lp-card">
+      <div class="section-label">🗺️ Personalized Learning Path</div>
+      <div id="lp-loading" class="lp-loading">
+        <div class="spinner spinner-sm"></div>
+        <span>Generating your roadmap…</span>
+      </div>
+      <div id="learning-path" style="display:none"></div>
+    </div>
+
+    <div class="btn-row" style="margin-top:1.5rem">
+      <a href="/" class="btn btn-ghost">← Start Over</a>
+      <button class="btn btn-primary" onclick="window.print()">🖨 Print Report</button>
+    </div>
+
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/results.js') }}"></script>
+{% endblock %}

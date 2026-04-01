@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Career Readiness — Assessment{% endblock %}
+
+{% block content %}
+<div class="page-wrap">
+
+  <nav class="step-nav">
+    <div class="step done" data-step="1"><div class="step-dot">✓</div><span>Input</span></div>
+    <div class="step-line done"></div>
+    <div class="step active" data-step="2"><div class="step-dot">2</div><span>Assessment</span></div>
+    <div class="step-line"></div>
+    <div class="step" data-step="3"><div class="step-dot">3</div><span>Results</span></div>
+  </nav>
+
+  <div class="card page-card" id="loading-card">
+    <div class="loading-center">
+      <div class="spinner"></div>
+      <p class="loading-title">Generating your assessment…</p>
+      <p class="loading-sub" id="loading-sub">Crafting questions tailored to your skills</p>
+    </div>
+  </div>
+
+  <div class="card page-card" id="question-card" style="display:none">
+    <div class="assess-header">
+      <div>
+        <h1>Skill Assessment</h1>
+        <p class="page-subtitle" id="assess-subtitle"></p>
+      </div>
+      <div class="q-counter-badge" id="q-counter-badge">1 / ?</div>
+    </div>
+
+    <div class="progress-wrap">
+      <div class="progress-bar" id="progress-bar" style="width:0%"></div>
+    </div>
+
+    <div class="question-body">
+      <div class="skill-badge" id="q-skill-badge">🧠 Skill</div>
+      <div class="q-level-tag" id="q-level-tag">Basic</div>
+      <h2 class="q-text" id="q-text"></h2>
+
+      <div class="q-options" id="q-options"></div>
+
+      <div class="q-footer">
+        <span class="q-hint" id="q-hint"></span>
+        <button class="btn btn-primary" id="next-btn" style="display:none" onclick="nextQuestion()">Next →</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/assessment.js') }}"></script>
+{% endblock %}

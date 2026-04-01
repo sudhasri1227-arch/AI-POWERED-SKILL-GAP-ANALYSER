@@ -1,0 +1,48 @@
+John Smith
+Email: john.smith@email.com | Phone: +1-555-0123
+LinkedIn: linkedin.com/in/johnsmith | GitHub: github.com/johnsmith
+
+SUMMARY
+Software developer with 3 years of experience building web applications.
+Passionate about clean code and user-friendly interfaces.
+
+SKILLS
+Programming Languages: Python, JavaScript, TypeScript
+Frontend: React, HTML, CSS, Responsive Design
+Backend: Node.js, Flask, REST APIs
+Database: SQL, PostgreSQL, MongoDB
+Tools: Git, Docker, VS Code, Postman
+Testing: Jest, PyTest
+Other: Agile, Problem Solving, Team Collaboration
+
+EXPERIENCE
+
+Frontend Developer — TechCorp Pvt Ltd (2022 – Present)
+- Built responsive web apps using React and TypeScript
+- Integrated REST APIs and handled state management with Redux
+- Wrote unit tests using Jest, improving code coverage by 40%
+- Collaborated with UI/UX team to implement Figma designs
+
+Junior Developer — StartupXYZ (2021 – 2022)
+- Developed backend APIs using Python and Flask
+- Designed and optimized SQL queries for PostgreSQL database
+- Used Docker for containerizing applications
+- Managed source code using Git and GitHub
+
+EDUCATION
+B.E. Computer Science — Anna University, Chennai (2017 – 2021)
+CGPA: 8.2 / 10
+
+PROJECTS
+E-Commerce Platform
+- Built full-stack app using React (frontend) and Node.js (backend)
+- Implemented JWT authentication and PostgreSQL database
+- Deployed using Docker on AWS EC2
+
+Data Dashboard
+- Created interactive dashboard using Python and data visualization libraries
+- Connected to REST APIs to fetch and display real-time data
+
+CERTIFICATIONS
+- AWS Cloud Practitioner (2023)
+- Python for Data Science — Coursera (2022)

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Career Readiness — Input{% endblock %}
+
+{% block content %}
+<div class="page-wrap">
+
+  <nav class="step-nav">
+    <div class="step active" data-step="1"><div class="step-dot">1</div><span>Input</span></div>
+    <div class="step-line"></div>
+    <div class="step" data-step="2"><div class="step-dot">2</div><span>Assessment</span></div>
+    <div class="step-line"></div>
+    <div class="step" data-step="3"><div class="step-dot">3</div><span>Results</span></div>
+  </nav>
+
+  <div class="card page-card">
+    <div class="page-header">
+      <h1>Career Readiness Check</h1>
+      <p class="page-subtitle">Add your skills and pick a target role to begin your personalized AI assessment.</p>
+    </div>
+
+    <div class="two-col">
+      <section>
+        <div class="section-label">Your Skills</div>
+
+        <div class="field">
+          <label>Upload resume <span class="optional">(optional — .txt, .pdf, .docx)</span></label>
+          <div class="upload-zone" id="upload-zone" onclick="document.getElementById('resume-file').click()">
+            <div class="upload-icon">📄</div>
+            <div id="upload-text" class="upload-text"><strong>Click to upload</strong> your resume</div>
+            <input type="file" id="resume-file" accept=".pdf,.txt,.doc,.docx" style="display:none">
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Add skills manually</label>
+          <div class="input-row">
+            <input type="text" id="skill-input" placeholder="e.g. Python, React, SQL…" />
+            <button class="btn btn-sm btn-primary" id="add-skill-btn">Add</button>
+          </div>
+          <div class="tags-wrap" id="skills-tags"></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-label">Target Role</div>
+
+        <div class="field">
+          <label>Select a role</label>
+          <select id="role-select">
+            <option value="">Choose a role…</option>
+            <option value="frontend">Frontend Developer</option>
+            <option value="backend">Backend Developer</option>
+            <option value="fullstack">Full Stack Developer</option>
+            <option value="data-scientist">Data Scientist</option>
+            <option value="ml-engineer">ML Engineer</option>
+            <option value="devops">DevOps Engineer</option>
+            <option value="product-manager">Product Manager</option>
+            <option value="ux-designer">UX Designer</option>
+            <option value="custom">Custom (paste JD below)</option>
+          </select>
+        </div>
+
+        <div class="field" id="jd-field" style="display:none">
+          <label>Paste job description / required skills</label>
+          <textarea id="jd-input" rows="5" placeholder="Paste JD or list skills separated by commas or new lines…"></textarea>
+        </div>
+
+        <div id="role-skills-preview" style="display:none">
+          <label>Required skills for this role</label>
+          <div class="tags-wrap" id="role-tags"></div>
+        </div>
+      </section>
+    </div>
+
+    <div id="input-error" class="form-error" style="display:none"></div>
+
+    <div class="btn-row">
+      <button class="btn btn-primary btn-lg" id="start-btn">Start Assessment →</button>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/input.js') }}"></script>
+{% endblock %}
