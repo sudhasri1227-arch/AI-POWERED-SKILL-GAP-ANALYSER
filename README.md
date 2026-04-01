@@ -40,7 +40,7 @@ cp .env.example .env
 
 Or export directly:
 ```bash
-export GEMINI_API_KEY=sk-ant-your-key-here
+export GEMINI_API_KEY=your-key-here
 ```
 
 ### 3. Run
